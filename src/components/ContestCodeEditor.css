@@ -1,0 +1,262 @@
+/* Contest Code Editor Styles */
+
+.contest-code-editor {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.editor-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.language-badge {
+    background: linear-gradient(45deg, #00ffff, #39ff14);
+    color: #000000;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 6px 16px rgba(0, 255, 255, 0.3);
+}
+
+.line-count {
+    color: #cccccc;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-template,
+.btn-clear {
+    background: rgba(0, 0, 0, 0.35);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    color: #00ffff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.btn-template:hover {
+    background: rgba(0, 255, 255, 0.15);
+    border-color: #00ffff;
+    color: #00ffff;
+}
+
+.btn-clear:hover {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    border-color: rgba(255, 107, 107, 0.5);
+}
+
+.editor-container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    position: relative;
+}
+
+.line-numbers {
+    background: rgba(0, 0, 0, 0.35);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1rem 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #a0aec0;
+    text-align: right;
+    user-select: none;
+    min-width: 50px;
+    line-height: 1.5;
+}
+
+.line-number {
+    height: 1.5em;
+    display: block;
+}
+
+.code-area {
+    flex: 1;
+    position: relative;
+}
+
+.code-textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffff;
+    background: rgba(0,0,0,0.6);
+    resize: none;
+    tab-size: 4;
+    white-space: pre;
+    overflow: auto;
+}
+
+.code-textarea::placeholder {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+.code-textarea:focus {
+    background: rgba(0,0,0,0.75);
+}
+
+.editor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f7fafc;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.8rem;
+    color: #4a5568;
+}
+
+.editor-stats {
+    display: flex;
+    gap: 1rem;
+}
+
+.editor-stats span {
+    background: #e2e8f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.editor-tips {
+    font-style: italic;
+}
+
+/* Syntax highlighting simulation */
+.code-textarea {
+    /* Basic syntax highlighting colors */
+    color: #2d3748;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .editor-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+    
+    .editor-info {
+        justify-content: center;
+    }
+    
+    .editor-actions {
+        justify-content: center;
+    }
+    
+    .editor-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .editor-stats {
+        justify-content: center;
+    }
+    
+    .line-numbers {
+        min-width: 40px;
+        padding: 1rem 0.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .code-textarea {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Dark theme support (optional) */
+@media (prefers-color-scheme: dark) {
+    .contest-code-editor {
+        background: #1a202c;
+        border-color: #2d3748;
+    }
+    
+    .editor-header,
+    .editor-footer {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .line-numbers {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #718096;
+    }
+    
+    .code-textarea {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+    
+    .code-textarea:focus {
+        background: #171923;
+    }
+    
+    .code-textarea::placeholder {
+        color: #718096;
+    }
+    
+    .btn-template,
+    .btn-clear {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .btn-template:hover {
+        background: #718096;
+        color: #f7fafc;
+    }
+    
+    .btn-clear:hover {
+        background: #742a2a;
+        color: #fed7d7;
+    }
+    
+    .editor-stats span {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .editor-tips {
+        color: #a0aec0;
+    }
+}
